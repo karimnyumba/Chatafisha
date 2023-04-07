@@ -11,7 +11,7 @@ To get started with our website, you will need to clone the repository to your l
 2. Run the following command to clone the repository:
 
 ```bash
-git clone https://github.com/karimnyumba/FuchaBins_UI.git
+git clone https://github.com/karimnyumba/Chatafisha.git
 ```
 
 3. Once the repository has been cloned, navigate to the project directory using the following command:
