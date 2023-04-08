@@ -17,7 +17,7 @@ git clone https://github.com/karimnyumba/Chatafisha.git
 3. Once the repository has been cloned, navigate to the project directory using the following command:
 
 ```bash
-cd Website
+cd FuchaBins
 ```
 
 4. Install the dependencies by running the following command:
