@@ -11,6 +11,7 @@ export default {
       },
       backgroundImage: {
         tembo: "url(./assets/tembo.png)",
+        baki: "url('./assets/shutterstock_15255660171.jpg')",
       },
     },
   },
