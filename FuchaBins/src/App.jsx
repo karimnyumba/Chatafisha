@@ -1,10 +1,10 @@
 import React from "react"
-import Navbar from "./components/nav"
+import Login from "./pages/login"
 function App() {
   
   return (
-    <div className="w-screen h-screen bg-red-300">
-    <Navbar />
+    <div>
+    <Login />
 
     </div>
     
