@@ -2,19 +2,31 @@ import { useState } from "react";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
-  const [date, setDate] = useState("");
   const [contact, setContact] = useState("");
   const [location, setLocation] = useState("");
+  const [date, setDate] = useState(getCurrentDate()); // initialize with current date
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleNameChange = (e) => setName(e.target.value);
-  const handleDateChange = (e) => setDate(e.target.value);
   const handleContactChange = (e) => {
     // Limit contact input to 9 digits
-    if (e.target.value.length <= 9) {
+    if (e.target.value.length <= 10) {
       setContact(e.target.value);
     }
   };
   const handleLocationChange = (e) => setLocation(e.target.value);
+  const handleDateChange = (e) => setDate(e.target.value);
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+
+  function getCurrentDate() {
+    const today = new Date();
+    const month = today.getMonth() + 1; // add 1 since getMonth returns 0-11
+    const day = today.getDate();
+    const year = today.getFullYear();
+    return `${year}-${month < 10 ? "0" + month : month}-${day < 10 ? "0" + day : day}`;
+  }
 
   return (
     <div className="bg-baki bg-cover bg-center min-h-screen flex flex-col items-center justify-center">
@@ -29,35 +41,47 @@ const RegisterForm = () => {
             onChange={handleNameChange}
           />
           <input
-            type="date"
+            type="email"
+            placeholder="Email"
             className="bg-gray-100 rounded-lg px-4 py-2 w-full mb-4"
-            value={date}
-            onChange={handleDateChange}
+            value={email}
+            onChange={handleEmailChange}
           />
-          <div className="relative w-full mb-4">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-              +255
-            </span>
+          <div className="flex justify-between w-full">
             <input
               type="tel"
-              className="bg-gray-100 rounded-lg pl-10 pr-4 py-2 w-full"
+              placeholder="Contact"
+              className="bg-gray-100 rounded-lg px-4 py-2 w-5/12 mr-2"
               value={contact}
               onChange={handleContactChange}
             />
+            <select
+              className="bg-gray-100 rounded-lg px-4 py-2 w-7/12"
+              value={location}
+              onChange={handleLocationChange}
+            >
+              <option value="">Select Location</option>
+              <option value="Temeke">Temeke</option>
+              <option value="Kinondoni">Kinondoni</option>
+              <option value="Kigamboni">Kigamboni</option>
+              <option value="Ubungo">Ubungo</option>
+              <option value="Kisarawe">Kisarawe</option>
+              <option value="Ilala">Ilala</option>
+            </select>
           </div>
-          <select
+          <input
+            type="date"
+            className="bg-gray-100 rounded-lg px-4 mt-3 py-2 w-full mb-4"
+            value={date}
+            onChange={handleDateChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
             className="bg-gray-100 rounded-lg px-4 py-2 w-full mb-4"
-            value={location}
-            onChange={handleLocationChange}
-          >
-            <option value="">Select Location</option>
-            <option value="Temeke">Temeke</option>
-            <option value="Kinondoni">Kinondoni</option>
-            <option value="Kigamboni">Kigamboni</option>
-            <option value="Ubungo">Ubungo</option>
-            <option value="Kisarawe">Kisarawe</option>
-            <option value="Ilala">Ilala</option>
-          </select>
+            value={password}
+            onChange={handlePasswordChange}
+          />
           <button className="bg-black text-green-500 rounded-lg px-4 py-2">
             Register
           </button>
