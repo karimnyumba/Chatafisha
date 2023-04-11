@@ -4,9 +4,13 @@ import logo2 from "../assets/logo2.png";
 import { BrowserRouter as Router, Route, Link, useNavigate } from "react-router-dom";
 import RegisterForm from "./RegisterForm";
 
+
 const Login = () => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-baki bg-cover bg-center">
+    <div className="bg-baki bg-cover bg-center min-h-screen flex flex-col items-center justify-center">
     <main className="w-screen max-w-screen">
 
       <Navbar />
@@ -25,14 +29,16 @@ const Login = () => {
           </div>
 
           <div className="w-3/5 space-y-4 absolute" style={{width: '450px', height: '98px', left: '98px', top: '370px'}}>
-            <Link to="/Account">
-              <button className="block bg-[#d9e2de] p-4 rounded-lg w-full">
+            {/* <Link to="/register"> */}
+              <button className="block bg-[#d9e2de] p-4 rounded-lg w-full" onClick={()=>{navigate("/pages/RegisterForm")}}>
             Open an account
             </button>
-            </Link>
-            <button className="block w-full p-4 rounded-lg bg-btnGrey">
+            {/* </Link> */}
+            {/* <Link to="/loginform"> */}
+            <button className="block w-full p-4 mt-3 rounded-lg bg-btnGrey" onClick={() => {navigate("/pages/LoginForm")}}>
               Already have account
             </button>
+            {/* </Link> */}
           </div>
         </div>
 

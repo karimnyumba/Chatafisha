@@ -10,6 +10,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "@near-wallet-selector/core": "^7.9.3",
+    "@near-wallet-selector/ledger": "^7.9.3",
+    "@near-wallet-selector/my-near-wallet": "^7.9.3",
+    "global": "^4.4.0",
+    "globalthis": "^1.0.3",
+    "near-api-js": "^0.44.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",

@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <nav className="flex items-center justify-end w-full">
       <div className="px-8 py-6">
         <ul className="flex items-center gap-x-6">
-          <li className="hover:underline">
-            <Link to="/">Home</Link>
+          <li className="hover:underline" onClick={() => {navigate("/")}}>
+            Home
           </li>
-          <li className="hover:underline">
-            <Link to="/login">Login</Link>
+          <li className="hover:underline" onClick={() => {navigate("/pages/login")}}>
+            Login
           </li>
           <li>
             <Link to="/wallet">
