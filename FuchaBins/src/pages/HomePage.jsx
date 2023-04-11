@@ -5,6 +5,7 @@ import logo from "../assets/Logo.png";
 import Banner from "../assets/Banner.png";
 
 const HomePage = () => {
+   
     return(
 
     <div className="bg-baki bg-cover bg-center">
@@ -24,7 +25,7 @@ const HomePage = () => {
 
           {/*Right Pane*/}
           <div className="flex flex-col justify-end w-full">
-          <div class="flex items-center mb-2">
+          <div class="flex items-center mb-">
   <h1 class="text-3xl font-bold ml-80 mr-5" style={{width: '178px'}}>CHATAFISHA</h1>
   <img src={logo} alt="logo" class="ml-6 w-12 h-12"/>
 </div>
