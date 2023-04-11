@@ -1,6 +1,19 @@
 import React from "react";
 
 const LoginForm = () => {
+
+  function login (){
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+
+    const history = useHistory();
+    useEffect(() =>{
+      if (localStorage.getItem('user-info')){
+        history.push("/add")
+      }
+    }, [])}
+  
+
   return (
     <div className="bg-baki bg-cover bg-center min-h-screen flex flex-col items-center justify-center">
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -18,6 +31,7 @@ const LoginForm = () => {
             id="email"
             type="email"
             placeholder="Email"
+            onChange={(e)=>setEmail(e.target.value)}
           />
         </div>
         <div className="mb-6">
@@ -32,10 +46,11 @@ const LoginForm = () => {
             id="password"
             type="password"
             placeholder="Password"
+            onChange={(e)=>setPassword(e.target.value)}
           />
         </div>
         <div className="flex justify-center">
-          <button className="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button onClick ={login} className="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Login
           </button>
         </div>
